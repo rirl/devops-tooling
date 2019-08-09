@@ -6,6 +6,10 @@ if not defined DEVOPS_VMWARE_BIN  set DEVOPS_VMWARE_BIN="F:\devops-toolsets\devo
 echo BEFORE CLUSTER START
 call %DEVOPS_VMWARE_BIN%\vm-list.cmd 
 
+echo "Node 4 NFS Server"
+call %DEVOPS_VMWARE_BIN%\vm-op.cmd start "E:\Users\rirl\Documents\Virtual Machines\do-wrk-04\do-wrk-04.vmx" nogui
+call %DEVOPS_VMWARE_BIN%\vm-pause.cmd 30
+
 echo "K8S Master"
 call %DEVOPS_VMWARE_BIN%\vm-op.cmd start "E:\Users\rirl\Documents\Virtual Machines\do-mgr-02\do-mgr-02.vmx" nogui
 call %DEVOPS_VMWARE_BIN%\vm-pause.cmd 60
